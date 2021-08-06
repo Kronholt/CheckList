@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53BC62F078E8D29F3BC53E85 /* Pods_CheckList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEA8B60BE74D308C76CCEE4 /* Pods_CheckList.framework */; };
+		E82AB30826BD433A009EFAA7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82AB30726BD433A009EFAA7 /* CategoryViewController.swift */; };
 		E8BBCD2C26B94D0800B77874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBCD2B26B94D0800B77874 /* AppDelegate.swift */; };
 		E8BBCD2E26B94D0800B77874 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBCD2D26B94D0800B77874 /* SceneDelegate.swift */; };
 		E8BBCD3026B94D0800B77874 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BBCD2F26B94D0800B77874 /* CheckListViewController.swift */; };
@@ -17,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6EEA8B60BE74D308C76CCEE4 /* Pods_CheckList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7442A7AF618D00A63B1B3DDB /* Pods-CheckList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckList.debug.xcconfig"; path = "Target Support Files/Pods-CheckList/Pods-CheckList.debug.xcconfig"; sourceTree = "<group>"; };
+		9078595D7F960BDF28F3568F /* Pods-CheckList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckList.release.xcconfig"; path = "Target Support Files/Pods-CheckList/Pods-CheckList.release.xcconfig"; sourceTree = "<group>"; };
+		E82AB30726BD433A009EFAA7 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E8BBCD2826B94D0800B77874 /* CheckList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BBCD2B26B94D0800B77874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8BBCD2D26B94D0800B77874 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,17 +39,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53BC62F078E8D29F3BC53E85 /* Pods_CheckList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0E0D3ABE517CAAC4E3272AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EEA8B60BE74D308C76CCEE4 /* Pods_CheckList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD6225FD249D5C27D08135BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7442A7AF618D00A63B1B3DDB /* Pods-CheckList.debug.xcconfig */,
+				9078595D7F960BDF28F3568F /* Pods-CheckList.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E8238F7626BB492E008D61DC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E8BBCD3426B94D0800B77874 /* CheckList.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		E8BBCD1F26B94D0800B77874 = {
 			isa = PBXGroup;
 			children = (
 				E8BBCD2A26B94D0800B77874 /* CheckList */,
 				E8BBCD2926B94D0800B77874 /* Products */,
+				DD6225FD249D5C27D08135BD /* Pods */,
+				C0E0D3ABE517CAAC4E3272AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +93,49 @@
 		E8BBCD2A26B94D0800B77874 /* CheckList */ = {
 			isa = PBXGroup;
 			children = (
-				E8BBCD2B26B94D0800B77874 /* AppDelegate.swift */,
-				E8BBCD2D26B94D0800B77874 /* SceneDelegate.swift */,
-				E8BBCD2F26B94D0800B77874 /* CheckListViewController.swift */,
-				E8BBCD3126B94D0800B77874 /* Main.storyboard */,
-				E8BBCD3726B94D0900B77874 /* Assets.xcassets */,
-				E8BBCD3926B94D0900B77874 /* LaunchScreen.storyboard */,
+				E8F9D4C326BA00FB0025D74E /* Models */,
+				E8F9D4CA26BA013F0025D74E /* Views */,
+				E8F9D4C826BA01380025D74E /* Controller */,
+				E8238F7626BB492E008D61DC /* Data */,
+				E8F9D4CB26BA01690025D74E /* Supporting Files */,
 				E8BBCD3C26B94D0900B77874 /* Info.plist */,
-				E8BBCD3426B94D0800B77874 /* CheckList.xcdatamodeld */,
 			);
 			path = CheckList;
+			sourceTree = "<group>";
+		};
+		E8F9D4C326BA00FB0025D74E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E8F9D4C826BA01380025D74E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E82AB30726BD433A009EFAA7 /* CategoryViewController.swift */,
+				E8BBCD2F26B94D0800B77874 /* CheckListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E8F9D4CA26BA013F0025D74E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E8BBCD3126B94D0800B77874 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E8F9D4CB26BA01690025D74E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8BBCD2B26B94D0800B77874 /* AppDelegate.swift */,
+				E8BBCD2D26B94D0800B77874 /* SceneDelegate.swift */,
+				E8BBCD3726B94D0900B77874 /* Assets.xcassets */,
+				E8BBCD3926B94D0900B77874 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8BBCD3F26B94D0900B77874 /* Build configuration list for PBXNativeTarget "CheckList" */;
 			buildPhases = (
+				28404EE20D16AD15166C396E /* [CP] Check Pods Manifest.lock */,
 				E8BBCD2426B94D0800B77874 /* Sources */,
 				E8BBCD2526B94D0800B77874 /* Frameworks */,
 				E8BBCD2626B94D0800B77874 /* Resources */,
+				E9D263CD486DF25C296FB469 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,11 +205,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		28404EE20D16AD15166C396E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CheckList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9D263CD486DF25C296FB469 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheckList/Pods-CheckList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheckList/Pods-CheckList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CheckList/Pods-CheckList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E8BBCD2426B94D0800B77874 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E82AB30826BD433A009EFAA7 /* CategoryViewController.swift in Sources */,
 				E8BBCD3626B94D0800B77874 /* CheckList.xcdatamodeld in Sources */,
 				E8BBCD3026B94D0800B77874 /* CheckListViewController.swift in Sources */,
 				E8BBCD2C26B94D0800B77874 /* AppDelegate.swift in Sources */,
@@ -287,6 +400,7 @@
 		};
 		E8BBCD4026B94D0900B77874 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7442A7AF618D00A63B1B3DDB /* Pods-CheckList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,6 +420,7 @@
 		};
 		E8BBCD4126B94D0900B77874 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9078595D7F960BDF28F3568F /* Pods-CheckList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

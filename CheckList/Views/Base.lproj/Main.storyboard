@@ -3,12 +3,50 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--✅List-->
+        <scene sceneID="qfC-lV-aXv">
+            <objects>
+                <tableViewController id="dbj-ik-HCq" customClass="CategoryViewController" customModule="CheckList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lVR-tR-jDH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="aAW-ov-upK">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aAW-ov-upK" id="kdx-tu-T5X">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dbj-ik-HCq" id="tYn-dU-WxH"/>
+                            <outlet property="delegate" destination="dbj-ik-HCq" id="lZv-nW-21q"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="✅List" id="BLg-jw-HsC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="F1E-R6-EnQ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="dbj-ik-HCq" id="I9B-8H-tSj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="aDA-8k-Vj6" kind="show" identifier="goToItems" id="I5h-2N-eyY"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Oc-jy-6Mm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1971" y="119"/>
+        </scene>
+        <!--Items-->
         <scene sceneID="s7u-03-bSY">
             <objects>
                 <tableViewController id="aDA-8k-Vj6" customClass="CheckListViewController" customModule="CheckList" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,9 +54,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" id="jNR-bB-I6l">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="aDA-8k-Vj6" id="iQa-0Z-ujz"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckListItemCell" id="GtY-D6-ECW">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GtY-D6-ECW" id="Bbm-aN-QMO">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -31,7 +77,7 @@
                             <outlet property="delegate" destination="aDA-8k-Vj6" id="zea-Of-gh7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="✅List" id="IiP-6i-N3D">
+                    <navigationItem key="navigationItem" title="Items" id="IiP-6i-N3D">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vbg-2L-8F1">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -42,7 +88,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Vb-gr-6Sj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023.1884057971015" y="118.52678571428571"/>
+            <point key="canvasLocation" x="2868" y="119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P6S-0d-pf8">
@@ -52,7 +98,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4fb-J0-BZe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="AccentColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="systemBlueColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,7 +106,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="aDA-8k-Vj6" kind="relationship" relationship="rootViewController" id="e1A-us-AEQ"/>
+                        <segue destination="dbj-ik-HCq" kind="relationship" relationship="rootViewController" id="210-Ob-Nya"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ism-Wm-hv1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -69,9 +115,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
